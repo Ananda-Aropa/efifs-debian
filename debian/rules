@@ -1,0 +1,6 @@
+#!/usr/bin/make -f
+
+%:
+	./get.sh
+	./refind-needs.sh
+	dh $@
