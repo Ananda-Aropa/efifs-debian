@@ -21,6 +21,7 @@ version=${version#"("}
 while read -r fs; do
 	fs=${fs#'Package: efi-fs-'}
 	fs=${fs//-/_}
+	rm -rf "$fs"
 	mkdir -p "$fs"
 	wget -O "${fs}/${fs}_${EFI_ARCH_SHORT}.efi" "https://github.com/pbatard/EfiFs/releases/download/v${version}/${fs}_${EFI_ARCH_SHORT}.efi"
 done < <(grep 'Package: efi-fs-' debian/control)
