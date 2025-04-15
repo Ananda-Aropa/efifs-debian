@@ -1,8 +1,8 @@
 #!/bin/bash
 
-upstream=https://github.com/pbatard/EfiFs
+. ./source.sh
 
-upstream_version=$(wget -O /dev/null $upstream/releases/latest 2>&1 | grep "$upstream/releases/tag/" | head -1 | awk '{print $2}')
+upstream_version=$(wget -O /dev/null "$UPSTREAM/releases/latest" 2>&1 | grep "$UPSTREAM/releases/tag/" | head -1 | awk '{print $2}')
 upstream_version=${upstream_version##*/}
 upstream_version=${upstream_version#v}
 

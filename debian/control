@@ -15,7 +15,10 @@ Vcs-Git: https://github.com/pbatard/EfiFs.git
 Package: refind-drivers-extra
 Architecture: amd64 i386 arm64
 Multi-Arch: foreign
-Depends: refind,
+Depends: 
+ refind,
+ refind-files-i386 [amd64],
+ refind-files-amd64 [i386],
  efi-fs-exfat,
  efi-fs-f2fs,
  efi-fs-hfsplus,
