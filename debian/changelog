@@ -1,4 +1,4 @@
-efi-fs (1.11-1) UNSTABLE; urgency=medium
+efi-fs (1.11-1) unstable; urgency=medium
 
   * Initial release. (Closes: #nnnn)  <nnnn is the bug number of your ITP>
 
