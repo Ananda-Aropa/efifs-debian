@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ARCH=${DEB_TARGET_ARCH:-${ARCH:-${1:-amd64}}}
+ARCH=${DEB_TARGET_ARCH:-${ARCH:-${1:-$(dpkg --print-architecture)}}}
 
 case "$ARCH" in
 amd64) EFI_ARCH_SHORT=x64 ;;
