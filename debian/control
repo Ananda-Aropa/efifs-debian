@@ -17,7 +17,7 @@ Architecture: amd64 i386 arm64
 Multi-Arch: foreign
 Depends: refind,
  efi-fs-exfat,
- efi-fs-fsfs,
+ efi-fs-f2fs,
  efi-fs-hfsplus,
  efi-fs-jfs,
  efi-fs-ntfs,
