@@ -14,7 +14,7 @@ esac
 
 mkdir -p drivers_$EFI_ARCH_SHORT
 
-for fs in exfat fsfs hfsplus jfs ntfs udf xfs zfs; do
+for fs in exfat f2fs hfsplus jfs ntfs udf xfs zfs; do
 	ln -s /usr/share/efi-fs/${fs}_${EFI_ARCH_SHORT}.efi drivers_$EFI_ARCH_SHORT
 done
 
