@@ -30,7 +30,8 @@ jobs:
         uses: DevChall-by-SDCY-and-VXM/debian-buildpackage-template@main
         with:
           distro: devuan/migrated:ceres-slim
-          arch: amd64 i386
+          arch: amd64 arm64
+          docker_arch_specific: false
           package_maintainer: Shadichy <shadichy@blisslabs.org>
 
       - name: Extract artifact
