@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 
 DISTRO="${DISTRO:-unstable}"
 MAINTAINER=$(git log -1 --pretty=format:'%an <%ae>')
-ORIGIN=$(git remote get-url origin)
+ORIGIN=$(git remote get-url github)
 
 upstream_version=$(wget -O /dev/null "$UPSTREAM/releases/latest" 2>&1 | grep "$UPSTREAM/releases/tag/" | head -1 | awk '{print $2}')
 upstream_version=${upstream_version##*/}
@@ -51,6 +51,7 @@ Depends:
  efi-fs-zfs,
  \${misc:Depends},
 Description: Extra EFI filesystem drivers for rEFInd
+
 EOF
 
 for module in $MODULES; do
