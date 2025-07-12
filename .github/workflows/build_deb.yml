@@ -64,22 +64,6 @@ jobs:
       - name: Extract artifact
         run: unzip -o built-deb-files.zip
 
-      - name: Build Arch package
-        run: |
-          # Build docker image
-          docker buildx create --use --name archlinux-devel --buildkitd-flags '--allow-insecure-entitlement security.insecure'
-          docker buildx build --builder archlinux-devel -f archlinux.dockerfile -t archlinux --allow security.insecure --output type=tar,dest=install.tar .
-
-          # Export it to install
-          mkdir install
-          sudo tar -C install -psxf install.tar
-
-          # Move content out
-          mv install/*.pkg.tar* ./
-
-          # Clean up
-          sudo rm -rf install install.tar
-
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -89,7 +73,6 @@ jobs:
             *_*_*.changes
             *_*_*.deb
             *_*_*.udeb
-            *.pkg.tar*
 
       - name: Dequeue
         if: always()
