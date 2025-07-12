@@ -25,6 +25,7 @@ Source: $PACKAGE_NAME
 Section: libs
 Priority: optional
 Maintainer: $MAINTAINER
+Rules-Requires-Root: no
 Build-Depends:
  debhelper-compat (= 13),
  wget,
@@ -65,7 +66,7 @@ Description: $module filesystem driver for uEFI
 
 EOF
 		# Create .install file
-		echo "${module}/${module}_*.efi usr/share/efi-fs" >"efi-fs-$module.install"
+		echo "${module//-/_}/${module//-/_}_*.efi usr/share/efi-fs" >"efi-fs-$module.install"
 done
 
 # Gen changelog (from latest commit)
